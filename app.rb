@@ -32,9 +32,10 @@ end
 post '/' do
   puts "inside post '/': #{params}"
   uri = URI::parse(params[:url])
+  uriShort = URI::parse(params[:myurlshort])
   if uri.is_a? URI::HTTP or uri.is_a? URI::HTTPS then
     begin
-      @short_url = ShortenedUrl.first_or_create(:url => params[:url])
+      @short_url = ShortenedUrl.first_or_create(:url => params[:url], :myurl => params[:myurlshort])
     rescue Exception => e
       puts "EXCEPTION!!!!!!!!!!!!!!!!!!!"
       pp @short_url
@@ -48,7 +49,12 @@ end
 
 get '/:shortened' do
   puts "inside get '/:shortened': #{params}"
-  short_url = ShortenedUrl.first(:id => params[:shortened].to_i(Base))
+
+  if (params[:myurlshort] == '')
+    short_url = ShortenedUrl.first(:id => params[:shortened].to_i(Base))
+  else
+    short_url = ShortenedUrl.first(:myurl => params[:shortened])
+  end
 
   # HTTP status codes that start with 3 (such as 301, 302) tell the
   # browser to go look for that resource in another location. This is
