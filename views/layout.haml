@@ -4,7 +4,11 @@
         =yield
         %form(action="/" method="POST")
             %label(for="url")
+            Acorta esta url:
             %input(type="text" name="url" id="myurl" autofocus size=100 accesskey="s")
+            %br
+            a / 
+            %input(type="text" name="urlshort" id="myurlshort" size=30)
+            (Opcional)
             %input(type="submit" value="Shorten")
-	    %input(type="text" name="urlshort" id="myurlshort" size=30)
 
