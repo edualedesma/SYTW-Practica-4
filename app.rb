@@ -57,7 +57,7 @@ end
 post '/' do
   puts "inside post '/': #{params}"
   uri = URI::parse(params[:url])
-  uriShort = URI::parse(params[:myurlshort])
+  uriShort = URI::parse(params[:myurlshort].to_s.strip.sub(' ', '_'))
   if uri.is_a? URI::HTTP or uri.is_a? URI::HTTPS then
     begin
       @short_url = ShortenedUrl.first_or_create(:url => params[:url], :myurl => params[:myurlshort], :username => session[:email].to_s)
