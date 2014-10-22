@@ -60,7 +60,7 @@ post '/' do
   uriShort = URI::parse(params[:myurlshort])
   if uri.is_a? URI::HTTP or uri.is_a? URI::HTTPS then
     begin
-      @short_url = ShortenedUrl.first_or_create(:url => params[:url], :myurl => params[:myurlshort], :username => session[:email])
+      @short_url = ShortenedUrl.first_or_create(:url => params[:url], :myurl => params[:myurlshort], :username => session[:email].to_s)
     rescue Exception => e
       puts "EXCEPTION!!!!!!!!!!!!!!!!!!!"
       pp @short_url
