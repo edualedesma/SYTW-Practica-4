@@ -8,7 +8,7 @@ Hemos mejorado la aplicación suministrada al principio añadiéndole nuevas fun
 
 ###Instalación
 
-Lo primero que haremos será clonar el repositorio de github SYTW-Practica-3 de la siguiente forma: `git clone git@github.com:alu3286/SYTW-Practica-3.git`.
+Lo primero que haremos será clonar el repositorio de github SYTW-Practica-4 de la siguiente forma: `git clone git@github.com:alu3286/SYTW-Practica-4.git`.
 
 Instalaremos las gemas necesarias: `bundle install`
 
