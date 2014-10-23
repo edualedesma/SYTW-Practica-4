@@ -1,7 +1,6 @@
-- if (session[:email].to_s == '')
-  %a{:href=>'/auth/google_oauth2'} Identifícate
-%a{:href=>'/logout/salir'} Salir
-
+/- if (session[:email].to_s == '')
+/  %a{:href=>'/auth/google_oauth2'} Identifícate
+/%a{:href=>'/logout/salir'} Salir
 %ol
   - @list.each do |url|
     %li
