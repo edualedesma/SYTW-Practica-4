@@ -13,7 +13,7 @@ See
 * [DataMapper](http://datamapper.org/getting-started.html)
 * [Haml](http://haml.info/)
 * [Sinatra](http://www.sinatrarb.com/)
-* [Deploying Rack-based Apps in Heroku](https://devcenter.heroku.com/articles/rack)
+* [Deploying Rack-based Apps in Heroku](https://devcenter.heroku.com/articles/rack) y [Casiano Docs](http://nereida.deioc.ull.es/~lpp/perlexamples/node483.html#section:herokupostgres)
 * [Intridea Omniauth](https://github.com/intridea/omniauth)
 
 
