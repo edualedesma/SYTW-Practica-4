@@ -14,7 +14,7 @@ Instalaremos las gemas necesarias: `bundle install`
 
 Luego ejecutaremos en local, escribiendo `rake`en la consola.
 
-Por último, iremos a http://localhost:9292/ para poder usar la aplicación.
+Por último, iremos a http://localhost:4567/ para poder usar la aplicación.
 
 
 ###Visualización en Heroku
