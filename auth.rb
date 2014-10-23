@@ -23,6 +23,7 @@ get '/auth/:name/callback' do
   session[:image] = @auth['info'].image
   session[:url] = @auth['info'].urls.values[0]
   session[:email] = @auth['info'].email
+  session[:logs] = ''
 
   #flash[:notice] =
     #{}%Q{<div class="chuchu">Autenticado como #{@a...uth['info'].name}.</div>}
@@ -40,5 +41,6 @@ end
 get '/auth/failure' do
   #flash[:notice] =·
    # %Q{<div class="error-auth">Error: #{params[:message]}.</div>}
+  #session[:logs] = "Error!!!"
   redirect '/'
 end
