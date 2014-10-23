@@ -137,6 +137,7 @@ DEPENDENCIES
   data_mapper
   dm-core
   dm-migrations
+
   dm-postgres-adapter
   dm-sqlite-adapter
   erubis

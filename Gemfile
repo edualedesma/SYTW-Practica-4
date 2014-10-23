@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'data_mapper'
-gem 'sqlite3'
 gem 'sinatra-contrib'
 gem 'haml'
 
@@ -11,13 +10,16 @@ gem 'omniauth-google-oauth2'
 gem 'pry'
 gem 'erubis'
 
-gem "slim"
-gem "sass"
-gem "dm-core"
-gem "dm-migrations"
-gem "thin"
+#gem "slim"
+#gem "sass"
+#gem "dm-core"
+#gem "dm-migrations"
+#gem "thin"
 
-gem "dm-sqlite-adapter", :group => :development
+group :development, :test do
+	gem 'sqlite3'
+	gem "dm-sqlite-adapter"
+end
 
 group :production do
     gem "pg"

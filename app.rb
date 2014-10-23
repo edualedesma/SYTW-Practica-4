@@ -68,7 +68,7 @@ end
 get '/:shortened' do
   puts "inside get '/:shortened': #{params}"
 
-  if (params[:myurlshort] == '')
+  if (params[:myurlshort].nil?)
     short_url = ShortenedUrl.first(:id => params[:shortened].to_i(Base))
   else
     short_url = ShortenedUrl.first(:myurl => params[:shortened])
