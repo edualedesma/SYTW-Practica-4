@@ -10,8 +10,19 @@ require 'data_mapper'
 
 require './auth.rb'
 
-DataMapper.setup( :default, ENV['DATABASE_URL'] || 
-                            "sqlite3://#{Dir.pwd}/my_shortened_urls.db" )
+# Configuracion en local
+configure :development do
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || 
+                             "sqlite3://#{Dir.pwd}/my_shortened_urls.db" )
+end
+
+# Configuracion para Heroku
+configure :production do
+  DataMapper.setup(:default, ENV['DATABASE_URL'])
+end
+
+#DataMapper.setup( :default, ENV['DATABASE_URL'] || 
+#                            "sqlite3://#{Dir.pwd}/my_shortened_urls.db" )
 DataMapper::Logger.new($stdout, :debug)
 DataMapper::Model.raise_on_save_failure = true 
 
