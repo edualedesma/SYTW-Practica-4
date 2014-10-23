@@ -26,14 +26,14 @@
                 %span.icon-bar
                 %span.icon-bar
                 %span.icon-bar
-              %a.navbar-brand{:href => "#"} Acortador URLs
+              %a.navbar-brand{:href => "/"} Acortador URLs
             .navbar-collapse.collapse
               %ul.nav.navbar-nav
                 %li
                   - if (session[:email].to_s == '')
                     %a{:href => '/auth/google_oauth2'} Identifícate
                   - else
-                    %a{:href => ''} Identificado como: blabla
+                    %a{:href => ''} Identificado como: #{session['name']}
                     %li
                       %a{:href => '/logout/salir'} Salir
     
