@@ -1,11 +1,19 @@
-/- if (session[:email].to_s == '')
-/  %a{:href=>'/auth/google_oauth2'} Identifícate
-/%a{:href=>'/logout/salir'} Salir
-%ol
+- @contador=1
+%table.table.table-striped
+  %tr
+    %td #
+    %td URL
+    %td Acceso
   - @list.each do |url|
-    %li
-      #{url.url}
+    %tr
+      %td
+        #{@contador}
+        - @contador = @contador + 1
+      %td
+        #{url.url}
       - if (url.myurl == '')
-        %a{:href=>"/#{url.id.to_s(Base)}"} (#{url.id.to_s(Base)})
+        %td
+          %a{:href=>"/#{url.id.to_s(Base)}"} (#{url.id.to_s(Base)})
       - else
-        %a{:href=>"/#{url.myurl}"} (#{url.myurl})
+        %td
+          %a{:href=>"/#{url.myurl}"} (#{url.myurl})

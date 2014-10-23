@@ -29,39 +29,43 @@
               %a.navbar-brand{:href => "#"} Acortador URLs
             .navbar-collapse.collapse
               %ul.nav.navbar-nav
-                %li.active
-                  %a{:href => "#"} Identifícate
                 %li
-                  %a{:href => "#about"} Salir
+                  - if (session[:email].to_s == '')
+                    %a{:href => '/auth/google_oauth2'} Identifícate
+                  - else
+                    %a{:href => ''} Identificado como: blabla
+                    %li
+                      %a{:href => '/logout/salir'} Salir
     
     /Carousel
     /==================================================
-    #myCarousel.carousel.slide{"data-ride" => "carousel"}
+    #myCarousel.carousel.slide
       / Indicators
       .carousel-inner
         .item.active
           .container
             .carousel-caption
-              %form(action="/" method="POST")
-                %label(for="url")
-                Acorta esta url:
-                %input(type="text" name="url" id="myurl" autofocus size=100 accesskey="s")
-                %input(type="submit" value="Shorten")
-                %br
-                a / 
-                %input(type="text" name="myurlshort" id="myurlshort" size=30)
-                (Opcional)
-                %br
-    /carousel
+              %h1 Acortador de URLs
+              %form.form-inline{:action=>"/", :method=>"POST", :role=>"form"}
+                .form-group
+                  %label(for="url")
+                  %input.form-control.input-lg{:type=>"text", :name=>"url", :id=>"myurl", :size=>60, :autofocus=>true, :accesskey=>"s", :placeholder=>"Introduzca url"}
+                  %input.form-control.input-lg{:type=>"text", :name=>"myurlshort", :id=>"myurlshort", :size=>30, :placeholder=>"a /"}
+                  %button.btn.btn-lg.btn-success{:type=>"submit"}Acortar
+
     .container.marketing
-      /yield aquí
-      =yield
+      .row
+        %center
+          =yield
+
       / FOOTER
-      %footer
-        %p.pull-right
-          /%a{:href => "#"} Back to top
-        %p
-          Eduardo Acuña Ledesa | Sergio Díaz González
+      %center
+        %footer 
+          %p
+            &copy Design by 
+            %a{:href=>"https://github.com/alu3286"}Eduardo Acuña
+            & 
+            %a{:href=>""}Sergio Díaz
           /%a{:href => "#"} Privacy
           /\&middot;
           /%a{:href => "#"} Terms
