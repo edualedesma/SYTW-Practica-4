@@ -68,7 +68,7 @@ end
 get '/:shortened' do
   puts "inside get '/:shortened': #{params}"
 
-  if (params[:myurlshort].nil?)
+  if (params[:myurlshort])
     short_url = ShortenedUrl.first(:id => params[:shortened].to_i(Base))
   else
     short_url = ShortenedUrl.first(:myurl => params[:shortened])
@@ -78,7 +78,7 @@ get '/:shortened' do
   # browser to go look for that resource in another location. This is
   # used in the case where a web page has moved to another location or
   # is no longer at the original location. The two most commonly used
-  # redirection status codes are 301 Move Permanently and 302 Found.
+  # redirection status codes are 301 Move Permanently and 302 Found. 
   redirect short_url.url, 301
 end
 
