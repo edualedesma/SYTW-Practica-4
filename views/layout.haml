@@ -1,15 +1,89 @@
 !!!
 %html
-    %body
-        =yield
-        %form(action="/" method="POST")
-            %label(for="url")
-            Acorta esta url:
-            %input(type="text" name="url" id="myurl" autofocus size=100 accesskey="s")
-            %input(type="submit" value="Shorten")
-            %br
-            a / 
-            %input(type="text" name="myurlshort" id="myurlshort" size=30)
-            (Opcional)
-            %br
+  %head
+    %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"} 
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    %link{:href => "", :rel => "icon"}
+    %title Acortador de URLs
+    / Bootstrap core CSS
+    %link{:href => "/css/bootstrap.min.css", :rel => "stylesheet"}/
+    /[if lt IE 9]
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    %link{:href => "/css/styles.css", :rel => "stylesheet"}/
+    
+                  
+    /NAVBAR
+    /==================================================    
+  %body 
+    .navbar-wrapper
+      .container
+        .navbar.navbar-inverse.navbar-static-top{:role => "navigation"}
+          .container
+            .navbar-header
+              %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+                %span.sr-only Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              %a.navbar-brand{:href => "#"} Acortador URLs
+            .navbar-collapse.collapse
+              %ul.nav.navbar-nav
+                %li.active
+                  %a{:href => "#"} Identifícate
+                %li
+                  %a{:href => "#about"} Salir
+      /Carousel
+      /==================================================
+    #myCarousel.carousel.slide{"data-ride" => "carousel"}
+      / Indicators
+      .carousel-inner
+        .item.active
+          .container
+            .carousel
+              %form(action="/" method="POST")
+                %label(for="url")
+                Acorta esta url:
+                %input(type="text" name="url" id="myurl" autofocus size=100 accesskey="s")
+                %input(type="submit" value="Shorten")
+                %br
+                a / 
+                %input(type="text" name="myurlshort" id="myurlshort" size=30)
+                (Opcional)
+                %br
+                %h1 Example headline.
+              %p
+                Note: If you're viewing this page via a
+                %code file://
+                URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
+              %p
+                %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Sign up today
+    /carousel
+    
+    .container.marketing
+      / AQUI VA EL YIELD
+      =yield
+
+      
+      
+      / FOOTER
+      %footer
+        %p.pull-right
+          %a{:href => "#"} Back to top
+        %p
+          \&copy; 2014 Company, Inc. &middot;
+          %a{:href => "#"} Privacy
+          \&middot;
+          %a{:href => "#"} Terms    
+    /container
+    /Bootstrap core JavaScript
+    /==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"}
+    %script{:src => "./js/bootstrap.min.js"}          
+    
+    
+    
 
