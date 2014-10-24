@@ -18,7 +18,7 @@ describe 'Tests de app.rb' do
 
     it "Comprobar texto correcto" do
 		get '/'
-		assert_match 'Acorta esta url:', last_response.body
+		assert_match 'Acortar', last_response.body
     end
    	
     
