@@ -24,6 +24,22 @@ describe 'Tests de app.rb' do
      end
      
      
+         
+    it "Debe devolver diario de avisos está en la base de datos" do
+		assert @Pagina, @Objeto.url 
+    end
+
+    it "Debe devolver que el username es igual" do
+   		assert 'Edu', @Objeto.username
+    end    
+    
+    it "Debe devolver que no coincide el username de objeto con Pedro" do
+   		assert_not_same('Pedro', @Objeto.username)
+    end
+
+    it "Debe devolver que no coincide el username de objeto con el username de objeto distinto" do
+   		assert_not_same(@Pagina2, @Objeto.url)
+    end
    
    it "Comprobar que va a la index" do
 	  get '/'
