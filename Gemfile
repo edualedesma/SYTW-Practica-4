@@ -19,3 +19,8 @@ group :production do
     gem "pg"
     gem "dm-postgres-adapter"
 end
+
+group :test do
+	gem "rack-test"
+	gem "rake"
+end
