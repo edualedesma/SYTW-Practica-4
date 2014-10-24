@@ -11,7 +11,7 @@ require 'data_mapper'
 require './auth.rb'
 
 # Configuracion en local
-configure :development do
+configure :development, :test do
   DataMapper.setup(:default, ENV['DATABASE_URL'] || 
                              "sqlite3://#{Dir.pwd}/my_shortened_urls.db" )
 end
