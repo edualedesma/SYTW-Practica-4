@@ -1,9 +1,11 @@
 language: ruby
-rvm:
-  - 2.0.0
-script:
-  - bundle install --without production
-  - ruby test/test.rb
-branches:
-  only:
-    - master
+rvm: 2.0.0
+#language: ruby
+#rvm:
+#  - 2.0.0
+#script:
+#  - bundle install --without production
+#  - ruby test/test.rb
+#branches:
+#  only:
+#    - master
